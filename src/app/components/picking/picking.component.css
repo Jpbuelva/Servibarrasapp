@@ -1,0 +1,111 @@
+.btnazul{
+    background:#3773ff;
+     height:150px;
+     width:25%;
+     font-size:30pt; 
+     
+}
+.btngris{
+   background:rgb(175, 175, 172);
+    height:150px;
+    width:25%;
+    font-size:30pt;
+}
+.btnverde{
+   background:#BFEE00;
+    height:150px;
+    width:25%;
+    font-size:30pt;
+}
+.btnrojo{
+   background:#FF4C4C;
+    height:150px;
+    width:25%;
+    font-size:30pt;
+}
+
+.btnrojo:hover{
+   background-color:rgb(255, 44, 44);
+}
+.btnazul:hover{
+   background-color:rgb(57, 27, 192);
+}
+.btngris:hover{
+   background-color:rgb(143, 136, 136);
+}
+.btnverde:hover{
+   background-color:rgb(249, 253, 8);
+}
+
+
+
+
+.TdUbicacionTitulo {
+   width: 12.5% !important;
+   max-width: 12.5% !important;
+   min-width: 12.5% !important;
+   background-color: #4f6fba !important;
+   color: #a71e32 !important;
+   font-weight: bold !important;
+   text-align: center !important;
+   font-size: large;
+   border: 1px solid black;
+   height: 30px !important;
+   font-size: 30px;
+}
+
+.TdUbicacionTitulo2 {
+   width: 12.5% !important;
+   max-width: 12.5% !important;
+   min-width: 12.5% !important;
+   background-color: #6c98ff !important;
+   color: #a71e32 !important;
+   font-weight: bold !important;
+   text-align: center !important;
+   font-size: large;
+   border: 1px solid black;
+   height: 30px !important;
+   font-size: 30px;
+}
+
+.TdUbicacionValor {
+   width: 12.5% !important;
+   max-width: 12.5% !important;
+   min-width: 12.5% !important;
+   background-color: #7aa7b4 !important;
+   color: #0a0a0a !important;
+   font-weight: bold !important;
+   text-align: center !important;
+   font-size: medium;
+   border: 1px solid black;
+   height: 30px !important;
+   font-size: 30px;
+}
+
+.TdUbicacionValor2 {
+   width: 12.5% !important;
+   max-width: 12.5% !important;
+   min-width: 12.5% !important;
+   background-color: #b2eeff !important;
+   color: #0a0a0a !important;
+   font-weight: bold !important;
+   text-align: center !important;
+   font-size: medium;
+   border: 1px solid black;
+   height: 30px !important;
+   font-size: 30px;
+}
+
+.TdUbicacionValor3 {
+   width: 12.5% !important;
+   max-width: 12.5% !important;
+   min-width: 12.5% !important;
+   background-color: #a71e32 !important;
+   color: #0a0a0a !important;
+   font-weight: bold !important;
+   text-align: center !important;
+   font-size: medium;
+   border: 1px solid black;
+   height: 30px !important;
+   font-size: 30px;
+}
