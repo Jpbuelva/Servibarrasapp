@@ -11,6 +11,7 @@ import { PickingDTORuteo } from '../../interfaces/picking-dto-ruteo';
   styleUrls: ['./picking.component.css']
 })
 export class PickingComponent implements OnInit {
+  vcambio: number;
   picking: PickingDTO[] = [];
   ruteos: PickingDTORuteo[] = [];
   ubicacionCapturada: PickingDTOUbicacionCapturada[] = [];
@@ -33,7 +34,8 @@ export class PickingComponent implements OnInit {
   cv8: string;
 
   constructor(private pickingDtoService: PickingdtoService) {
-    this.ruteos = this.pickingDtoService.getRuteos();
+       this.ruteos = this.pickingDtoService.getRuteos();
+       this.vcambio = 1;
  }
 
 
@@ -55,7 +57,7 @@ export class PickingComponent implements OnInit {
 
  btnRuteos(ruteo: number) {
   this.picking = this.pickingDtoService.getBase();
-
+  this.vcambio = 2;
   // tslint:disable-next-line: prefer-for-of
   for (let i = 0; i < this.picking.length; i++) {
     if (this.picking[i].RuteoId === ruteo) {
@@ -69,7 +71,11 @@ export class PickingComponent implements OnInit {
     this.v8 = this.picking[i].ubicacionCodigo.substring(14, 16);
     break;
    }
+
   }
 
+ }
+ btncabeza() {
+   this.vcambio = 1;
  }
 }
