@@ -109,3 +109,40 @@
    height: 30px !important;
    font-size: 30px;
 }
+
+
+
+.close {
+   color: #aaaaaa;
+   float: right;
+   font-size: 28px;
+   font-weight: bold;
+
+ }
+ 
+ .close:hover,
+ .close:focus {
+   color:red;
+   text-decoration: none;
+   cursor: pointer;
+ }
+
+ .btnleft{
+   margin-left: 40%;
+   width: 60%;
+ }
+ .btnright{
+   margin-left: 7%;
+   width: 60%;
+
+ }
+ .btncenter{
+   padding-top: 10px;
+ }
+
+
+ .sizedrop{
+   width: 92% !important; 
+   margin-left: 4% !important;
+   border: 1px solid;
+ }

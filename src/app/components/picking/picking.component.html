@@ -10,11 +10,7 @@
         </ul>
         <div class="tab-content" id="pills-tabContent">
             <div [className] ="vcambio == 1 ? 'tab-pane fade show active' : 'tab-pane fade'" id="nav-cabeza" role="tab" aria-labelledby="nav-cabeza-tab">
-                <!-- <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xs-12 text-center alert-warning" id="txtResultadoCabeza">
-                    </div>
-                </div> -->
-                <div class="row">
+                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xs-12 text-center">
                         <h3><b>Ruteos</b></h3>
                     </div>
@@ -110,11 +106,10 @@
                 
                                     <div class="col-md-12">
                                             
-                                                <button type="button" class="btn btnazul text-dark border"   id="btnCapturar" (click)="BtnCaptuta('juan')">CAPTURAR</button>
-                                                <button type="button"  class="btn btngris  text-dark border" id="btnProcesar" onclick="Obj_Pick.Capturar()">PROCESAR</button>
-                                                <button type="button" class="btn btnverde  text-dark border"  id="btnCapturar" onclick="$('#ModalCambiarOrden').modal('show');">ORDEN</button>
-                                                <button type="button"  class="btn btnrojo  text-dark border"  id="btnNovedad" onclick="javascript: Obj_Pick.GenerarNovedad()">NOVEDAD</button>
-                                        
+                                                <button type="button" class="btn btnazul text-dark border textresponsive"   id="btnCapturar" (click)="BtnCaptuta('juan')">CAPTURAR</button>
+                                                <button type="button"  class="btn btngris  text-dark border textresponsive" id="btnProcesar" onclick="Obj_Pick.Capturar()">PROCESAR</button>
+                                                <button type="button" class="btn btnverde  text-dark border textresponsive"  id="btnCapturar" onclick="$('#ModalCambiarOrden').modal('show');">ORDEN</button>
+                                                <button type="button"  class="btn btnrojo  text-dark border textresponsive"  id="btnNovedad" onclick="javascript: Obj_Pick.GenerarNovedad()">NOVEDAD</button>
                                                         
                                     </div>
                         
@@ -129,105 +124,93 @@
                         </div>
             </div>
         </div>
-
+<!-- Modal Principal -->
     <div class="modal fade" id="ModalCambiarOrden" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
+                        <h4 class="modal-title" title="Cambio Ubicacion">Cambio</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close" title="Cerrar"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" title="Cambio Ubicacion">Cambio</h4>
                 </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div id="lblCambioRFID" class="col-md-12 label" style="text-align: center;height:50px;font-size:20px">
-
+                <br>             
+                    <div class="col-md-12 btn-group">
+                        <div class="col-md-6">
+                                <button type="button" id="BtnCamUbicacionReintentar" class=" btnleft btn btn-primary btn-lg " onclick="javascript: Obj_Pick.ConsultarBahias();" title="Cambiar">Bahia</button>
+                        </div>
+                        <div class="col-md-6">
+                                <button type="button" id="Button2" class="btnright btn btn-success btn-lg" title="Producto" onclick="javascript: Obj_Pick.ConsultarProductos();">Producto</button>
                         </div>
                     </div>
-                    <div>
-                        <button type="button" id="BtnCamUbicacionReintentar" class="btn btn-default" style="width:200px;height:50px;margin-left:95px"  onclick="javascript: Obj_Pick.ConsultarBahias();" title="Cambiar">Bahia</button>
-                        <button type="button" id="Button2" class="btn btn-default" style="width:200px;height:50px" title="Producto" onclick="javascript: Obj_Pick.ConsultarProductos();">Producto</button>
-                    </div>
-                </div>
-                <div class="center">
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col-md-12" style="padding-top: 10px;">
-                                  <button type="button" id="BtnLimpiarFiltros" class="btn btn-primary" style="width:200px;height:50px;margin-left:0px" data-dismiss="modal" onclick="javascript: Obj_Pick.LimpiarFiltros();" title="Limpiar filtrar">Limpiar Filtros</button>
-                                <button type="button" id="Button2" class="btn btn-default" style="width:200px;height:50px;align-content:center;" title="Cancelar" onclick="$('#ModalCambiarOrden').modal('hide');">Cancelar</button>
-                            </div>
-                        </div>
-                    </div>
+              
+                <div class="center modal-body">                                          
+                            <div class="col-md-12 ">
+                                  <button type="button" id="BtnLimpiarFiltros" class="btn btn-primary btn-block"  data-dismiss="modal" onclick="javascript: Obj_Pick.LimpiarFiltros();" title="Limpiar filtrar">Limpiar Filtros</button>
+                                <button type="button" id="Button2" class="btn btn-danger btn-block"  title="Cancelar" onclick="$('#ModalCambiarOrden').modal('hide');">Cancelar</button>
+                            </div>                     
+                  
                 </div>
             </div>
         </div>
     </div>
-
+<!-- Modal bahia -->
     <div class="modal fade" id="ModalCambiarOrdenBahia" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
+                        <h4 class="modal-title" title="Cambio Ubicacion">Cambio de Bahia</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close" title="Cerrar"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" title="Cambio Ubicacion">Cambio de Bahia</h4>
                 </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div id="lblCambioRFID" class="col-md-12 label" style="text-align: center;height:50px;font-size:20px">
-
-                        </div>
-                    </div>
-                    <div>
-                        <select class="form-control " style="margin:50px;width:500px;height:40px;border-radius:7px;font-size:30px" id="SelectBahia">
-                            <option value="0">Seleccione la bahia</option>
-                            <option value="Bahia1">Bahia1</option>
-                            <option value="Bahia2">Bahia2</option>
-                            <option value="Bahia3">Bahia3</option>
-                            <option value="Bahia4">Bahia4</option>
-                            <option value="Bahia5">Bahia5</option>
-                            <option value="Bahia6">Bahia6</option>
-                            <option value="Bahia7">Bahia7</option>
-                            <option value="Bahia8">Bahia8</option>
-                        </select>
-                    </div>
+                    <br>
+                   
+                    <div class="col-md-12">              
+                        <div class="form-group" >                        
+                          <select class="form-control sizedrop"  id="SelectBahia">
+                                <option  value="0">Seleccione la bahia</option>
+                                <option value="Bahia1">Bahia1</option>
+                                <option value="Bahia2">Bahia2</option>
+                                <option value="Bahia3">Bahia3</option>
+                                <option value="Bahia4">Bahia4</option>
+                                <option value="Bahia5">Bahia5</option>
+                                <option value="Bahia6">Bahia6</option>
+                                <option value="Bahia7">Bahia7</option>
+                                <option value="Bahia8">Bahia8</option>
+                          </select>
+                        </div>                        
+                    </div>    
+                
+                <div class="center modal-body">                   
+                        <div class="col-md-12" >
+                            <button type="button" id="BtnCamUbicacionReintentar" class="btn btn-primary btn-block"  onclick="javascript: Obj_Pick.CambiarBahia();" title="Cambiar">Cambiar</button>
+                            <button type="button" id="Button2"class="btn btn-danger btn-block"  title="Cancelar" onclick="$('#ModalCambiarOrdenBahia').modal('hide');">Cancelar</button>
+                        </div>                   
                 </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-12" style="padding-top: 10px;">
-                            <button type="button" id="BtnCamUbicacionReintentar" class="btn btn-primary" style="width:200px;height:50px;margin-left:80px" data-dismiss="modal" onclick="javascript: Obj_Pick.CambiarBahia();" title="Cambiar">Cambiar</button>
-                            <button type="button" id="Button2" class="btn btn-default" style="width:200px;height:50px" title="Cancelar" onclick="$('#ModalCambiarOrdenBahia').modal('hide');">Cancelar</button>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
     </div>
 
+    <!-- Modal productos -->
     <div class="modal fade" id="ModalCambiarOrdenProducto" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
+                        <h4 class="modal-title" title="Cambio Ubicacion">Producto Cambio</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close" title="Cerrar"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" title="Cambio Ubicacion">Producto Cambio</h4>
                 </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div id="lblCambioRFID" class="col-md-12 label" style="text-align: center;height:50px;font-size:20px">
-
-                        </div>
-                    </div>
-                    <div>
-                        <input id="txtfiltroproducto" class="form-control " placeholder="ProductoCodigo/ProductoNombre" style="margin:50px;width:500px;height:40px;border-radius:7px;font-size:30px" onchange="javascript: Obj_Pick.FiltrarProducto();" />
-                        <select class="form-control " style="margin:50px;width:500px;height:40px;border-radius:7px;font-size:30px" id="SelectProducto">
+                <div class="col-md-12">
+                     <br>                    
+                        <label >Filtro </label>
+                        <input id="txtfiltroproducto" class="form-control " placeholder="ProductoCodigo/ProductoNombre"  onchange="javascript: Obj_Pick.FiltrarProducto();" />
+                       <br>
+                        <select class="form-control " id="SelectProducto">
                             <option value="0">Seleccione el producto</option>
                             
-                        </select>
-                    </div>
+                        </select>                    
                 </div>
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-12" style="padding-top: 10px;">
-                            <button type="button" id="BtnCamUbicacionReintentar" class="btn btn-primary" style="width:200px;height:50px;margin-left:80px" data-dismiss="modal" onclick="javascript: Obj_Pick.CambiarProducto();" title="Cambiar">Cambiar</button>
-                            <button type="button" id="Button2" class="btn btn-default" style="width:200px;height:50px" title="Cancelar" onclick="$('#ModalCambiarOrdenProducto').modal('hide');">Cancelar</button>
+                            <button type="button" id="BtnCamUbicacionReintentar" class="btn btn-primary btn-block"  data-dismiss="modal" onclick="javascript: Obj_Pick.CambiarProducto();" title="Cambiar">Cambiar</button>
+                            <button type="button" id="Button2" class="btn btn-danger btn-block"  title="Cancelar" onclick="$('#ModalCambiarOrdenProducto').modal('hide');">Cancelar</button>
                         </div>
                     </div>
                 </div>
@@ -235,6 +218,8 @@
             </div>
         </div>
     </div>
+
+    <script src="../../../assets/BlackSys.js"></script>
     
 </body>
 
