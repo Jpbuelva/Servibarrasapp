@@ -18,15 +18,22 @@ private picking: PickingDTO[] = [
     cantidad: '60'
   },
   {
-    RuteoId: 1,
+    RuteoId: 2,
     ubicacionCodigo: '2222222222222222' ,
     productoCodigo: '96526108370001' ,
     productoNombre: 'RINGO VITALITY CACHORROS X 8KG BULTO',
     cantidad: '60'
   },
   {
-    RuteoId: 2,
+    RuteoId: 3,
     ubicacionCodigo: '3333333333333333' ,
+    productoCodigo: '96526108370001' ,
+    productoNombre: 'RINGO VITALITY CACHORROS X 8KG BULTO',
+    cantidad: '60'
+  },
+  {
+    RuteoId: 4,
+    ubicacionCodigo: '4444444444444444' ,
     productoCodigo: '96526108370001' ,
     productoNombre: 'RINGO VITALITY CACHORROS X 8KG BULTO',
     cantidad: '60'
@@ -35,7 +42,7 @@ private picking: PickingDTO[] = [
 
   private UbicacionCaptuda: PickingDTOUbicacionCapturada[] = [
     {
-      ubicacionCodigo: '0301070200010201'
+      ubicacionCodigo: '1122334400010201'
     }];
 
   private RuteosConsecutivos: PickingDTORuteo[] = [

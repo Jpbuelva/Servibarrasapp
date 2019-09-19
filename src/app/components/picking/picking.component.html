@@ -23,20 +23,23 @@
                     </div>
                 </div>
             </div>
-            <div [className] ="vcambio == 2 ? 'tab-pane fade show active' : 'tab-pane fade'"  id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">  
-                    <div class="tab-pane" id="nav-captura" role="tabpanel" aria-labelledby="nav-captura-tab">
-                            <div id="error" class="row">
-                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xs-12 text-center label-warning" id="txtResultado">
-                                    <label id="lblResultadoError" class="text-warning"></label>
-                                </div>
+            <div [className] ="vcambio == 2 ? ' fade show active' : 'tab-pane fade'"  id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">  
+                    <div class="" id="nav-captura" role="tabpanel" aria-labelledby="nav-captura-tab">
+                            <div class="row" id="divProd">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xs-12 text-center " >
+                                        <h4 class="bg-info  m-0"> PRODUCTO </h4>                                        
+                                        <h6 class="border ">  {{picking[0].productoCodigo}} - {{picking[0].productoNombre}}</h6>
+
+                                    </div>
+                                    <h4 class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xs-12 text-center" style="margin:0 !important" id="txtProd"></h4>
                             </div>
-                            <div class="row bg-info" id="divUbi">
+                            <br>
+                            <div class="row " id="divUbi">
                                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xs-12 text-center">
-                                    <h5> UBICACIÓN</h5>
+                                    <h4 class="bg-info m-0"> UBICACIÓN</h4>
                                 </div>
-                                <h4 class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xs-12 text-center hidden" style="margin:0 !important" id="txtUbi"></h4>
-                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xs-12 text-center">
-                                    <table style="width:100%">
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xs-12 text-center mt-0">
+                                    <table class="w-100">
                                         <tr>
                                             <td class="TdUbicacionTitulo">B</td>
                                             <td class="TdUbicacionTitulo">A</td>
@@ -61,29 +64,24 @@
                                 </div>
                 
                             </div>
-                            <div class="row bg-info" id="divProd">
-                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xs-12 text-center">
-                                    <h6> PRODUCTO <br/> {{picking[0].productoCodigo}} {{picking[0].productoNombre}}</h6>
-                                </div>
-                                <h4 class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xs-12 text-center" style="margin:0 !important" id="txtProd"></h4>
-                            </div>
+                          
                             <br />
-                            <div class="row bg-info" id="divUbi">
-                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xs-12 text-center" style="background:#00c7ff">
-                                    <h5> UBICACIÓN CAPTURADA </h5>
+                            <div class="row" id="divUbi">
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xs-12 text-center">
+                                    <h4 class="bg-info m-0"> UBICACIÓN CAPTURADA </h4>
                                 </div>
-                                <h4 class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xs-12 text-center hidden" style="margin:0 !important" id="txtUbi"></h4>
-                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xs-12 text-center" style="background:#00c7ff">
+                               
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xs-12 text-center">
                                     <table style="width:100%">
-                                        <tr style="display:none">
-                                            <td class="TdUbicacionTitulo2">B</td>
-                                            <td class="TdUbicacionTitulo2">A</td>
-                                            <td class="TdUbicacionTitulo2">C</td>
-                                            <td class="TdUbicacionTitulo2">M</td>
-                                            <td class="TdUbicacionTitulo2">N</td>
-                                            <td class="TdUbicacionTitulo2">F</td>
-                                            <td class="TdUbicacionTitulo2">K</td>
-                                            <td class="TdUbicacionTitulo2">P</td>
+                                        <tr > 
+                                            <td class="TdUbicacionTitulo">B</td>
+                                            <td class="TdUbicacionTitulo">A</td>
+                                            <td class="TdUbicacionTitulo">C</td>
+                                            <td class="TdUbicacionTitulo">M</td>
+                                            <td class="TdUbicacionTitulo">N</td>
+                                            <td class="TdUbicacionTitulo">F</td>
+                                            <td class="TdUbicacionTitulo">K</td>
+                                            <td class="TdUbicacionTitulo">P</td>
                                         </tr>
                                         <tr>
                                             <td  [className] ="cv1 != v1 && cv1 != null ? 'TdUbicacionValor3' : 'TdUbicacionValor2'" id="B">{{cv1}}</td>
@@ -97,11 +95,8 @@
                                         </tr>
                                     </table>
                                     <br />
-                                </div>
-                
-                            </div>
-                
-                            <br>
+                                </div>                
+                            </div>                
                             <div class="row">
                 
                                     <div class="col-md-12">
@@ -138,7 +133,10 @@
                                 <button type="button" id="BtnCamUbicacionReintentar" class=" btnleft btn btn-primary btn-lg " onclick="javascript: Obj_Pick.ConsultarBahias();" title="Cambiar">Bahia</button>
                         </div>
                         <div class="col-md-6">
-                                <button type="button" id="Button2" class="btnright btn btn-success btn-lg" title="Producto" onclick="javascript: Obj_Pick.ConsultarProductos();">Producto</button>
+                                <!-- <button type="button" id="Button2" class="btnright btn btn-success btn-lg" title="Producto">Producto</button>
+                                 -->
+                                <button type="button" id="Button2" class="btnright btn btn-success btn-lg" title="Producto"  onclick="javascript: Obj_Pick.ConsultarProductos();"  (click)="getproducto()"> Producto</button>
+                               
                         </div>
                     </div>
               
@@ -199,17 +197,18 @@
                 <div class="col-md-12">
                      <br>                    
                         <label >Filtro </label>
-                        <input id="txtfiltroproducto" class="form-control " placeholder="ProductoCodigo/ProductoNombre"  onchange="javascript: Obj_Pick.FiltrarProducto();" />
+                        <input id="txtfiltroproducto" class="form-control " placeholder="ProductoCodigo/ProductoNombre"  />
                        <br>
-                        <select class="form-control " id="SelectProducto">
-                            <option value="0">Seleccione el producto</option>
+                        <select  class="form-control" id="SelectProducto" name="SelectProducto"  >
+                            <option selected="true" value="0">Select</option>                          
+                            <option *ngFor="let producto of productos"  [value]=producto.productoId>{{producto.productoCodigo}} {{producto.productoDescripcion}}</option>                          
                             
                         </select>                    
                 </div>
                 <div class="modal-body">
                     <div class="row">
-                        <div class="col-md-12" style="padding-top: 10px;">
-                            <button type="button" id="BtnCamUbicacionReintentar" class="btn btn-primary btn-block"  data-dismiss="modal" onclick="javascript: Obj_Pick.CambiarProducto();" title="Cambiar">Cambiar</button>
+                        <div class="col-md-12 pt-3">
+                            <button type="button" id="BtnCamUbicacionReintentar" class="btn btn-primary btn-block"  data-dismiss="modal"  title="Cambiar">Cambiar</button>
                             <button type="button" id="Button2" class="btn btn-danger btn-block"  title="Cancelar" onclick="$('#ModalCambiarOrdenProducto').modal('hide');">Cancelar</button>
                         </div>
                     </div>

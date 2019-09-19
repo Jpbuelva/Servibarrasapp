@@ -1,25 +1,25 @@
 .btnazul{
     background:#3773ff;
-     height:150px;
+     height:120px;
      width:25%;
      font-size:30pt; 
      
 }
 .btngris{
    background:rgb(175, 175, 172);
-    height:150px;
+    height:120px;
     width:25%;
     font-size:30pt;
 }
 .btnverde{
    background:#BFEE00;
-    height:150px;
+    height:120px;
     width:25%;
     font-size:30pt;
 }
 .btnrojo{
    background:#FF4C4C;
-    height:150px;
+    height:120px;
     width:25%;
     font-size:30pt;
 }
@@ -44,14 +44,14 @@
    width: 12.5% !important;
    max-width: 12.5% !important;
    min-width: 12.5% !important;
-   background-color: #4f6fba !important;
+   background-color: #64a1da !important;
    color: #a71e32 !important;
    font-weight: bold !important;
    text-align: center !important;
    font-size: large;
    border: 1px solid black;
    height: 30px !important;
-   font-size: 30px;
+   font-size: 25px;
 }
 
 .TdUbicacionTitulo2 {
@@ -72,7 +72,7 @@
    width: 12.5% !important;
    max-width: 12.5% !important;
    min-width: 12.5% !important;
-   background-color: #7aa7b4 !important;
+  
    color: #0a0a0a !important;
    font-weight: bold !important;
    text-align: center !important;
@@ -86,7 +86,6 @@
    width: 12.5% !important;
    max-width: 12.5% !important;
    min-width: 12.5% !important;
-   background-color: #b2eeff !important;
    color: #0a0a0a !important;
    font-weight: bold !important;
    text-align: center !important;
@@ -100,7 +99,7 @@
    width: 12.5% !important;
    max-width: 12.5% !important;
    min-width: 12.5% !important;
-   background-color: #a71e32 !important;
+   background-color: #ec3e59 !important;
    color: #0a0a0a !important;
    font-weight: bold !important;
    text-align: center !important;

@@ -6,7 +6,6 @@ import { PickingDTOUbicacionCapturada } from '../../interfaces/picking-dto-ubica
 import { PickingDTORuteo } from '../../interfaces/picking-dto-ruteo';
 
 import { ProductosserviceService } from '../../services/productosservice.service';
-import { ActivatedRoute } from '@angular/router';
 import { Productos } from '../../interfaces/productos';
 
 
@@ -16,45 +15,41 @@ import { Productos } from '../../interfaces/productos';
   styleUrls: ['./picking.component.css']
 })
 export class PickingComponent implements OnInit {
-  public productos: Productos;
+ productos: Productos[];
 
   vcambio: number;
   picking: PickingDTO[] = [];
   ruteos: PickingDTORuteo[] = [];
-  producto: ProductosserviceService[] = [];
   ubicacionCapturada: PickingDTOUbicacionCapturada[] = [];
-  v1: string;
-  v2: string;
-  v3: string;
-  v4: string;
-  v5: string;
-  v6: string;
-  v7: string;
-  v8: string;
+  v1: string ;
+  v2: string ;
+  v3: string ;
+  v4: string ;
+  v5: string ;
+  v6: string ;
+  v7: string ;
+  v8: string ;
 
-  cv1: string;
-  cv2: string;
-  cv3: string;
-  cv4: string;
-  cv5: string;
-  cv6: string;
-  cv7: string;
-  cv8: string;
+  cv1: string ;
+  cv2: string ;
+  cv3: string ;
+  cv4: string ;
+  cv5: string ;
+  cv6: string ;
+  cv7: string ;
+  cv8: string ;
 
   constructor(
     private pickingDtoService: PickingdtoService,
-    private route: ActivatedRoute,
     private productoService: ProductosserviceService) {
-
-      this.productoService.getProducto().subscribe(res => {
-                console.log(res);
-      });
-      this.ruteos = this.pickingDtoService.getRuteos();
-      this.vcambio = 1;
+    this.ruteos = this.pickingDtoService.getRuteos();
+    this.vcambio = 1;
+  
  }
 
 
   ngOnInit() {
+ 
   }
   BtnCaptuta(usuario: string) {
   this.ubicacionCapturada = this.pickingDtoService.getCaptura(usuario);
@@ -86,36 +81,16 @@ export class PickingComponent implements OnInit {
     this.v8 = this.picking[i].ubicacionCodigo.substring(14, 16);
     break;
    }
-
   }
-
  }
  btncabeza() {
    this.vcambio = 1;
  }
 
-
-
-   
-
-
-
-
-//   // tslint:disable-next-line: only-arrow-functions
-//   ConsultarBahias = function() {
-//     let html = '';
-  
-//     html += '<select id="CambioBahia">' +
-//             '<option value="0">Seleccione la bahia</option>';
-
-//     for (var i = 0; i < 6; i++) {
-//             html += "<option value=\"" + "bahia"+[i] + "\">" + "bahia"+[i] + "</option>";
-//         }
-
-//         html += "</select>";
-
-//         $("#SelectBahia").html(html);
-//         $('#ModalCambiarOrdenBahia').modal('show');
-// }
-
+public getproducto() {
+  this.productoService.getProducto().subscribe(res => {
+  this.productos = res;
+  console.log(this.productos);
+});
+ }
 }

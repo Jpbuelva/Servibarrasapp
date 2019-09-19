@@ -22,19 +22,18 @@ function Cls_Pick() {
 
     this.ConsultarProductos = function () {
                 
-        var html = "";
+        // var html = "";
 
-        html += "<select id=\"CambioProducto\">" +
-            "<option value=\"0\">Seleccione el producto</option>";
+        // html += "<select id=\"CambioProducto\">" +
+        //     "<option value=\"0\">Seleccione el producto</option>";
 
-        for (var i = 0; i < 10; i++) {
-            html += "<option>productoCodigo"+[i] + "</option>";
-        }
+        // for (var i = 0; i < 10; i++) {
+        //     html += "<option>productoCodigo"+[i] + "</option>";
+        // }
 
-        html += "</select>";
-        $("#txtfiltroproducto").val("");
-        alert(html);
-        $("#SelectProducto").html(html);
+        // html += "</select>";
+        // $("#txtfiltroproducto").val("");       
+        // $("#SelectProducto").html(html);
         $('#ModalCambiarOrdenProducto').modal('show');
                 
     }
