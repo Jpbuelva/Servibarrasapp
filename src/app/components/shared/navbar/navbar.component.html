@@ -11,11 +11,14 @@
             <img src="../../../../favicon.ico" width="30" height="30" class="d-inline-block align-top" alt="">
             Servibarras
           </a>
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item" routerLinkActive="active">
-          <a class="nav-link" [routerLink]="['picking']">Picking  </a>
+      <ul class="navbar-nav mr-auto"   >
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['picking']" [routerLinkActive]="['activado']">Picking  </a> 
         </li>
-       
+        <li class="nav-item">
+           
+          <a class="nav-link" [routerLink]="['preruteo']" [routerLinkActive]="['activado']">Preruteo  </a>
+        </li>
     
       </ul>
       <form class="form-inline my-2 my-lg-0">
