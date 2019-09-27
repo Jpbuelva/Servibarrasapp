@@ -10719,9 +10719,9 @@ body {
   overflow: hidden;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 820) {
   .sidebar {
-    width: 225px !important;
+    width: 150px !important;
   }
   .sidebar .nav-item .nav-link {
     display: block;
