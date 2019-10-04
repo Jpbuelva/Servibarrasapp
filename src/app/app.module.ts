@@ -15,6 +15,9 @@ import { MaterialModule } from '../assets/material/material.module';
 import { UbicacionesComponent } from './components/ubicaciones/ubicaciones.component';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { GridComponent } from './components/grid/grid.component';
+import { RuteoComponent } from './components/ruteo/ruteo.component';
+import { DialogBoxComponent } from './components/shared/dialog-boxx/dialog-boxx.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,13 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     NavbarComponent,
     ProductosComponent,
     PreruteoComponent,
-    UbicacionesComponent
+    UbicacionesComponent,
+    GridComponent,
+    RuteoComponent,
+    DialogBoxComponent
+  ],
+  entryComponents: [
+    DialogBoxComponent
   ],
   imports: [
     BrowserModule,
@@ -35,8 +44,6 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     NoopAnimationsModule,
     MatSortModule,
     MatPaginatorModule
-    
-
   ],
   providers: [],
   bootstrap: [AppComponent]

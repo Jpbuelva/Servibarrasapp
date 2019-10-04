@@ -4,15 +4,21 @@
             <li class="nav-item">
                 <a [className] ="vcambio == 1 ? 'nav-link active' : 'nav-link'" (click)="btncabeza()" id="nav-cabeza-tab" data-toggle="pill" href="#nav-cabeza"  role="tab" aria-controls="nav-cabeza" aria-selected="true">Cabeza</a>
             </li>
+         
+
             <li class="nav-item">
                 <a [className] ="vcambio == 2 ? 'nav-link active' : 'nav-link'" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Captura</a>
             </li>
+           
         </ul>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xs-12 text-center">
+                <h3><b>PICKING</b></h3>
+            </div>
         <div class="tab-content" id="pills-tabContent">
             <div [className] ="vcambio == 1 ? 'tab-pane fade show active' : 'tab-pane fade'" id="nav-cabeza" role="tab" aria-labelledby="nav-cabeza-tab">
                  <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xs-12 text-center">
-                        <h3><b>Ruteos</b></h3>
+                        <h4> Lista de Ruteos</h4>
                     </div>
                 </div>
                 <div class="row">

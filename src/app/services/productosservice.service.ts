@@ -13,7 +13,6 @@ export class ProductosserviceService {
   productos: Productos[] = [];
   public url: string;
 
-  
   constructor( private http: HttpClient) {
     this.url = 'http://52.224.236.78/tecnocedi/api/productos' ;
      }

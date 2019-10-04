@@ -90,7 +90,6 @@ export class PickingComponent implements OnInit {
 public getproducto() {
   this.productoService.getProducto().subscribe(res => {
   this.productos = res;
-  console.log(this.productos);
 });
  }
 }

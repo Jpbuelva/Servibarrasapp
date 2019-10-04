@@ -3,3 +3,55 @@ td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type, th.mat-header-cell:
     padding-top: 10px;
     padding-right: 15px;
 }
+
+
+/* Animaciones */
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.fast {
+  -webkit-animation-duration: 0.4s;
+  animation-duration: 0.4s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+.fadeIn {
+  animation-name: fadeIn;
+}
+.siz{ 
+  font-size: 16pt !important;
+}
+
+.combo{
+   margin-left: 55% ;
+    margin-top: 20px;
+}
+ 
+@media (max-width: 991px) {  
+  .combo{
+ margin-left: 40% ;
+  margin-top: 20px; }
+}
+ @media (max-width: 768px) {  
+   .combo{
+  margin-left: 20% ;
+   margin-top: 20px; }
+ }
+ .colortext {  
+  color: blue !important;
+}

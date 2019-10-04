@@ -1,25 +1,37 @@
-<div class="tab-content" id="pills-tabContent">
- 
-<div class="w-100"  [className] ="vcambio == 1 ? 'tab-pane fade show active' : 'tab-pane fade'" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"> 
-
 <div class="row">
-  <div class="col-6">
+
+  <div class="col-3">
   <button class="btn btn-primary" (click)="prerutear()" href="#pills-profile">pre-ruteo</button>
 </div>
- 
-  <div class="col-6 text-right">
+  <div class="col-6 text-center siz" >
+PRE-RUTEAR
+</div>
+  <div class="col-3 text-right">
       <a class="nav-link dropdown-toggle " href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fas fa-bell fa-fw"></i>
           <span class="badge badge-danger">9+</span>
         </a>
   </div>
   <br>
+ 
+  <div class="col-12 text-center animated fadeIn"  *ngIf="cargando" > 
+   <i class="fas fa-spinner fa-3x fa-spin"></i> 
+ 
 </div>
+</div>
+<div  class="animated fadeIn">
+    
+
     <mat-form-field> 
         <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
     </mat-form-field>
-    <div style="overflow:auto" class="mat-elevation-z8">
-        <table mat-table [dataSource]="dataSource" matSort>
+    <select class="combo" [(ngModel)]="opcionSeleccionado" (change)="capturar()">            
+            <option value="1">Consolidado</option>
+            <option value="2">No consolidado</option>           
+        </select>
+    <div style="overflow:auto" class="mat-elevation-z8 ">
+       
+        <table mat-table [dataSource]="dataSource" matSort class="animated fadeIn">
             <ng-container matColumnDef="select">
                 <th mat-header-cell *matHeaderCellDef>
                     <mat-checkbox style="padding-top: 10px " (change)="$event ? masterToggle() : null" [checked]="selection.hasValue() && isAllSelected()" [indeterminate]="selection.hasValue() && !isAllSelected()">
@@ -30,58 +42,108 @@
                     </mat-checkbox>
                 </td>
             </ng-container>  
-            <ng-container matColumnDef="pedidoId"  class="mt-5">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> No. </th>
-                <td mat-cell *matCellDef="let element"> {{element.pedidoId}} </td>
+            <ng-container matColumnDef="pedidoId"    class="animated fadeIn mt-5">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header   class="animated fadeIn mt-5 colortext" > No. </th>
+                <td mat-cell *matCellDef="let element"   class="animated fadeIn mt-5"> {{element.pedidoId}} </td>
             </ng-container>
-            <ng-container matColumnDef="pedidoConsecutivo">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> Consecutivo </th>
-                <td mat-cell *matCellDef="let element"> {{element.pedidoConsecutivo}} </td>
+            
+            <ng-container matColumnDef="pedidoConsecutivo" class="animated fadeIn mt-5">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header  class="animated fadeIn mt-5 colortext"> Consecutivo </th>
+                <td mat-cell *matCellDef="let element" class="animated fadeIn mt-5"> {{element.pedidoConsecutivo}} </td>
             </ng-container>
-            <ng-container matColumnDef="pedidoFechaEntrega" class="mt-5">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> Fecha Entrega </th>
-                <td mat-cell *matCellDef="let element" class="mt-5"> {{element.pedidoFechaEntrega}} </td>
+            <ng-container matColumnDef="pedidoFechaEntrega"  class="animated fadeIn mt-5 colortext">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header class="animated fadeIn colortext"> Fecha Entrega </th>
+                <td mat-cell *matCellDef="let element" class="mt-5 animated fadeIn"> {{element.pedidoFechaEntrega}} </td>
             </ng-container>
-            <ng-container matColumnDef="pedidoFechaCarga">
-                <th style="padding: 0px 15px;"  mat-header-cell *matHeaderCellDef mat-sort-header> Fecha Carga </th>
-                <td  style="padding: 0px 15px;" mat-cell *matCellDef="let element"> {{element.pedidoFechaCarga}} </td>
+            <ng-container matColumnDef="pedidoFechaCarga" class="animated fadeIn">
+                <th class="animated fadeIn colortext" style="padding: 0px 15px;"  mat-header-cell *matHeaderCellDef mat-sort-header> Fecha Carga </th>
+                <td  class="animated fadeIn" style="padding: 0px 15px;" mat-cell *matCellDef="let element"> {{element.pedidoFechaCarga}} </td>
             </ng-container>
-            <ng-container matColumnDef="pedidoObservacion">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> Observacion </th>
-                <td mat-cell *matCellDef="let element"> {{element.pedidoObservacion}} </td>
+            <ng-container matColumnDef="pedidoObservacion" class="animated fadeIn">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header class="animated fadeIn colortext"> Observacion </th>
+                <td mat-cell *matCellDef="let element" class="animated fadeIn"> {{element.pedidoObservacion}} </td>
             </ng-container>
-            <ng-container matColumnDef="pedidoDocumentoERP">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> Documento ERP </th>
-                <td mat-cell *matCellDef="let element"> {{element.pedidoDocumentoERP}} </td>
+            <ng-container matColumnDef="pedidoDocumentoERP" class="animated fadeIn">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header class="animated fadeIn colortext"> Documento ERP </th>
+                <td mat-cell *matCellDef="let element" class="animated fadeIn"> {{element.pedidoDocumentoERP}} </td>
             </ng-container>
-            <ng-container matColumnDef="pedidoConsecutivoERP">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> Consecutivo ERP </th>
-                <td mat-cell *matCellDef="let element"> {{element.pedidoConsecutivoERP}} </td>
+            <ng-container matColumnDef="pedidoConsecutivoERP" class="animated fadeIn">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header class="animated fadeIn colortext"> Consecutivo ERP </th>
+                <td mat-cell *matCellDef="let element" class="animated fadeIn"> {{element.pedidoConsecutivoERP}} </td>
             </ng-container>
-            <ng-container matColumnDef="pedidoVersion">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> Version </th>
-                <td mat-cell *matCellDef="let element"> {{element.pedidoVersion}} </td>
+            <ng-container matColumnDef="pedidoVersion" class="animated fadeIn">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header class="animated fadeIn colortext"> Version </th>
+                <td mat-cell *matCellDef="let element" class="animated fadeIn"> {{element.pedidoVersion}} </td>
             </ng-container>
-            <ng-container matColumnDef="pedidoFuente">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> Fuente </th>
-                <td mat-cell *matCellDef="let element"> {{element.pedidoFuente}} </td>
+            <ng-container matColumnDef="pedidoFuente" class="animated fadeIn">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header class="animated fadeIn colortext"> Fuente </th>
+                <td mat-cell *matCellDef="let element" class="animated fadeIn"> {{element.pedidoFuente}} </td>
             </ng-container>
-            <ng-container matColumnDef="sucursal">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> sucursal </th>
-                <td mat-cell *matCellDef="let element"> {{element.sucursal}} </td>
+            <ng-container matColumnDef="sucursal" class="animated fadeIn">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header class="animated fadeIn colortext"> sucursal </th>
+                <td mat-cell *matCellDef="let element" class="animated fadeIn"> {{element.sucursal}} </td>
             </ng-container>
+            <ng-container matColumnDef="action">
+                    <th mat-header-cell *matHeaderCellDef  class="animated fadeIn colortext">Option</th>
+                    <td mat-cell *matCellDef="let element">
+                      <button mat-icon-button matTooltip="Detalles" (click)="openDetalles(element.pedidoId)" onclick="$('#ModalDetallePedido').modal('show')">
+                          <mat-icon aria-label="Detalles"><i class="fas fa-align-justify"></i></mat-icon>
+                        </button>                     
+                    </td>
+                  </ng-container>
+          
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selection.toggle(row)">
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;" >
             </tr>
         </table>
-        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+        <mat-paginator [pageSizeOptions]="[5, 10, 20, 50]"  [pageSize]="5" showFirstLastButtons></mat-paginator>
     </div>
-</div>
-<div [className] ="vcambio == 2 ? 'tab-pane fade show active' : 'tab-pane fade'" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">  segunda 
 
-<div class="col-6">
-        <button class="btn btn-primary" (click)="cambio()"  href="#pills-home">Ruteo</button>
-      </div>
 </div>
+
+
+
+<!-- MODAL DETALLE DEL PEDIDO -->
+<div class="modal fade " id="ModalDetallePedido" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                        <h4 class="modal-title" title="Cambio Ubicacion">Detalles de Pedido</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" title="Cerrar"><span aria-hidden="true">&times;</span></button>
+                </div>
+                         <table style="font-size:10pt; " class="table table-responsive border bg-white w-100 ">
+                        <thead>
+                            <tr class="bg-info">           
+                              
+                                <th scope="col">Ciudad</th> 
+                                <th scope="col">Estado</th>
+                                <th scope="col">Detalle Cantidad</th>
+                                <th scope="col">Presentacion</th> 
+                                <th scope="col">Producto</th> 
+                                <th scope="col">Producto Tipo</th> 
+                                <th scope="col">Envio Codigo</th> 
+                                <th scope="col">Envio Direccion</th> 
+                                <th scope="col">Envio Nombre</th> 
+                                <th scope="col">Envio Telefono</th> 
+                          
+                              </tr>
+                        </thead>
+                        <tbody>                    
+                          <tr *ngFor="let t of detallePedido">
+                              <td>{{t.ciudadNombre}}</td>         
+                              <td>{{t.estadoNombre}}</td>
+                              <td>{{t.pedidoDetalleCantidad}}</td>
+                              <td>{{t.presentacionDescripcion}}</td>                 
+                              <td>{{t.productoDescripcion}}</td>                 
+                              <td>{{t.productoTipoDescripcion}}</td>                 
+                              <td>{{t.puntoEnvioCodigo}}</td>                 
+                              <td>{{t.puntoEnvioDireccion}}</td>                 
+                              <td>{{t.puntoEnvioNombre}}</td>                 
+                              <td>{{t.puntoEnvioTelefono}}</td>                 
+                            </tr>
+                        </tbody>
+                      </table>       
+               </div>
+        </div>
+    </div>
  
-</div>

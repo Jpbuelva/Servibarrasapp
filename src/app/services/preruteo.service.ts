@@ -34,4 +34,7 @@ headers: HttpHeaders = new HttpHeaders({
       const myheader = new HttpHeaders().set('Content-Type', 'application/json');
       return this.http.post(`${this.url}/SetPreruteo`, data, {headers: myheader});
       }
+      getpedidodetalle(id: string): Observable<any> {
+        return this.http.get(`${this.url}/getpedidodetalle/${id}`);
+      }
   }
