@@ -1,0 +1,74 @@
+<h1 mat-dialog-title>Configuración Ruteo </h1>
+<div mat-dialog-content>
+
+
+    <table mat-table [dataSource]="dataSource">
+
+        <ng-container matColumnDef="pedidoid" style="padding: 0px 20px;">
+          <th mat-header-cell *matHeaderCellDef style="padding: 0px 20px;" > ID </th>
+          <td mat-cell *matCellDef="let element" [(ngModel)]="data.pedidoId"> {{element.pedidoId}} </td>
+        </ng-container>
+      
+        <ng-container matColumnDef="pedidoConsecutivo" style="padding: 0px 20px;">
+          <th mat-header-cell *matHeaderCellDef style="padding: 0px 20px;"> Consecutivo </th>
+          <td mat-cell *matCellDef="let element"> {{element.pedidoConsecutivo}} </td>
+        </ng-container>
+      
+        <!-- Name Column -->
+        <ng-container matColumnDef="pedidoFecha" style="padding: 0px 20px;">
+          <th mat-header-cell *matHeaderCellDef style="padding: 0px 20px;"> pedido Fecha </th>
+          <td mat-cell *matCellDef="let element"> {{element.pedidoFecha  | date: 'dd/MM/yyyy' }} </td>
+        </ng-container>
+      
+        <!-- Weight Column -->
+        <ng-container matColumnDef="pedidoFechaCarga" style="padding: 0px 20px;">
+          <th mat-header-cell *matHeaderCellDef style="padding: 0px 20px;">  Fecha Carga </th>
+          <td mat-cell *matCellDef="let element"> {{element.pedidoFechaCarga  | date: 'dd/MM/yyyy' }} </td>
+        </ng-container>
+      
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="pedidoObservacion" style="padding: 0px 20px;">
+          <th mat-header-cell *matHeaderCellDef style="padding: 0px 20px;"> Observacion </th>
+          <td mat-cell *matCellDef="let element"> {{element.pedidoObservacion}} </td>
+        </ng-container>
+        
+         <ng-container matColumnDef="bahias">
+            <th mat-header-cell *matHeaderCellDef  style="padding: 0px 20px;" >Bahas </th>
+            <td mat-cell *matCellDef="let element" class="m-3">
+                <mat-form-field  class="m-1"  [(ngModel)]="data.pedidoBahiaItems">
+                    <mat-select placeholder="Seleccione Bahia">
+                      <mat-option *ngFor="let bahia of data.ELEMENT_DATASBahias" [value]="bahia.ubicacionId">
+                        {{bahia.ubicacionDescripcion}}                        
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>   
+              </td>           
+          </ng-container>
+          <ng-container matColumnDef="orden">
+              <th mat-header-cell *matHeaderCellDef  style="padding: 0px 20px;" >orden </th>        
+              <td mat-cell *matCellDef="let element">
+                    <mat-form-field>
+                        <mat-select placeholder="Seleccione Orden" [(ngModel)]="data.orden">
+                          <mat-option *ngFor="let configCount of data.ELEMENT_DATASConfiguracion; let i = index" [value]="i+1">
+                            {{i+1}}
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>                
+              </td>
+            </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selectRow(row)"></tr>
+      </table>      
+      <mat-label>Asignar Grupos</mat-label>
+      
+  <mat-form-field>
+       <mat-select [(ngModel)]="data.GruposItems" multiple>
+        <mat-option  *ngFor="let bahias of data.ELEMENT_DATASGrupos" [value]="bahias.ubicacionId">{{bahias.grupoNombre}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button (click)="click(data)" cdkFocusInitial>Ok</button> 
+</div>

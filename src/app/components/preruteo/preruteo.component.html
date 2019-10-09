@@ -52,12 +52,12 @@ PRE-RUTEAR
                 <td mat-cell *matCellDef="let element" class="animated fadeIn mt-5"> {{element.pedidoConsecutivo}} </td>
             </ng-container>
             <ng-container matColumnDef="pedidoFechaEntrega"  class="animated fadeIn mt-5 colortext">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header class="animated fadeIn colortext"> Fecha Entrega </th>
-                <td mat-cell *matCellDef="let element" class="mt-5 animated fadeIn"> {{element.pedidoFechaEntrega}} </td>
+                <th mat-header-cell *matHeaderCellDef class="animated fadeIn colortext"> Fecha Entrega </th>
+                <td mat-cell *matCellDef="let element" class="mt-5 animated fadeIn"> {{element.pedidoFechaEntrega  | date: 'dd/MM/yyyy'}} </td>
             </ng-container>
             <ng-container matColumnDef="pedidoFechaCarga" class="animated fadeIn">
                 <th class="animated fadeIn colortext" style="padding: 0px 15px;"  mat-header-cell *matHeaderCellDef mat-sort-header> Fecha Carga </th>
-                <td  class="animated fadeIn" style="padding: 0px 15px;" mat-cell *matCellDef="let element"> {{element.pedidoFechaCarga}} </td>
+                <td  class="animated fadeIn" style="padding: 0px 15px;" mat-cell *matCellDef="let element"> {{element.pedidoFechaCarga  | date: 'dd/MM/yyyy'}} </td>
             </ng-container>
             <ng-container matColumnDef="pedidoObservacion" class="animated fadeIn">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header class="animated fadeIn colortext"> Observacion </th>
@@ -86,7 +86,7 @@ PRE-RUTEAR
             <ng-container matColumnDef="action">
                     <th mat-header-cell *matHeaderCellDef  class="animated fadeIn colortext">Option</th>
                     <td mat-cell *matCellDef="let element">
-                      <button mat-icon-button matTooltip="Detalles" (click)="openDetalles(element.pedidoId)" onclick="$('#ModalDetallePedido').modal('show')">
+                      <button mat-icon-button matTooltip="Detalles" (click)="openDetalles(element.pedidoId)" data-toggle="modal" data-target="#ModalDetallePedido">
                           <mat-icon aria-label="Detalles"><i class="fas fa-align-justify"></i></mat-icon>
                         </button>                     
                     </td>

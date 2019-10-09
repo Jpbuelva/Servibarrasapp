@@ -1,10 +1,15 @@
-interface PreruteoDTO {
-  preRuteoId: number;
+import { pedidoBahia } from './pedidoBahia';
+import { grupoPreruteo } from './grupoPreruteo';
+
+export class PreruteoDTO {
+
+  preRuteoid: number;
   preRuteoFecha: string;
   preRuteoUsuario: string;
   preRuteoConsecutivo: number;
   documentoId: number;
   preRuteoPedidoEstado: number;
-  preRuteosDetalle: any[];
-  preRuteosPedidos: any[];
+  pedidosBahias: pedidoBahia;
+  gruposPreruteo: grupoPreruteo;
+
 }

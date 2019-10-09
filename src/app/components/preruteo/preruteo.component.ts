@@ -7,6 +7,7 @@ import { SelectionModel } from '@angular/cdk/collections';
 import { PedidosDTO } from '../../interfaces/pedidos-dto';
 import { PreruteoService } from '../../services/preruteo.service';
 import {Router} from '@angular/router';
+ 
 
 @Component({
   selector: 'app-preruteo',
@@ -162,4 +163,6 @@ export class PreruteoComponent implements OnInit {
   cambio() {
     this.vcambio = 1;
   }
+
+
 }
