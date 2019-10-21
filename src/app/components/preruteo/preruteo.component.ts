@@ -86,11 +86,10 @@ export class PreruteoComponent implements OnInit {
  this.selection.isSelected(row) ? this.selection.deselect(row) :  this.selection.select(row) ;
 
   }
-  capturar() {
-    console.log(this.opcionSeleccionado);
-  }
+  
   prerutear() {
-  if  (this.opcionSeleccionado === '1') {
+
+  if (this.opcionSeleccionado === '1') {
     const usuarioId = 1 ;
     this. uniqueProcessId =  Guid.create().toString();
     const preruteodata = [];
@@ -139,7 +138,7 @@ export class PreruteoComponent implements OnInit {
     }
  }
   setpreruteo(usuarioId, uniqueProcessId, numberdata) {
-    const preruteo = "{\"usuarioId\":" + usuarioId + ",\"uniqueProcessId\":" + "\""+uniqueProcessId +"\"" + "}";
+    const preruteo = '{"usuarioId":' + usuarioId + ',"uniqueProcessId":' + '"' + uniqueProcessId + '"' + '}';
     this.preruteoService.setpreruteos(preruteo).
     subscribe( resp => {
       if (numberdata === -1) {
@@ -156,7 +155,6 @@ export class PreruteoComponent implements OnInit {
     this.preruteoService.getpedidodetalle (pedidoId)
     .subscribe( res => {
          this.detallePedido = res.table;
-         console.log(this.detallePedido);
         });
     }
 

@@ -8,6 +8,7 @@ import { RuteoComponent } from './components/ruteo/ruteo.component';
 
 
 const routes: Routes = [
+  {path: '', component: PreruteoComponent},
   {path: 'picking', component: PickingComponent},
   {path: 'preruteo', component: PreruteoComponent},
   {path: 'ruteo', component: RuteoComponent},

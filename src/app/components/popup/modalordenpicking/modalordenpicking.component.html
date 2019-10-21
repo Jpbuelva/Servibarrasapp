@@ -1,0 +1,33 @@
+<h1 mat-dialog-title>Orden </h1>
+<div mat-dialog-content>
+  <ng-container >
+    <th mat-header-cell *matHeaderCellDef  style="padding: 0px 20px;" > </th>        
+   
+          <mat-form-field style="width: 100%;">
+              <mat-select placeholder="Seleccione Bahia"  [(ngModel)]="data.novedadId">
+                <mat-option   *ngFor="let novedad of data.dataNovedad;" [value]="novedad.novedadId" required>
+                  {{novedad.novedadDescripcion }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>     
+            
+              
+          <mat-form-field style="width: 100%;">
+            <mat-select placeholder="Seleccione Producto"  [(ngModel)]="data.novedadId">
+              <mat-option   *ngFor="let novedad of data.dataNovedad;" [value]="novedad.novedadId" required>
+                {{novedad.novedadDescripcion }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>         
+   
+  </ng-container>
+</div>
+<div mat-dialog-actions>   
+    
+   <button>Limpiar filtro</button>
+    <button>Guardar</button> 
+    <button *ngFor="let novedadAccion of data.dataNovedadAccion;" mat-button
+    [mat-dialog-close]="data"   [value]="novedadAccion.novedadAccionId" 
+    (click)="data.novedadAccionId = novedadAccion.novedadAccionId" [disabled]="!data.novedadId">
+    {{novedadAccion.novedadAccionNombre.substring(0 ,novedadAccion.novedadAccionNombre.indexOf(" "))}}</button>            
+</div>

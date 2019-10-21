@@ -7,15 +7,17 @@ import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 
 
 import { AppComponent } from './app.component';
-import { PickingComponent } from './components/picking/picking.component';
+import { PickingComponent  } from './components/picking/picking.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PreruteoComponent } from './components/preruteo/preruteo.component';
 import { MaterialModule } from '../assets/material/material.module';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { RuteoComponent, ModalruteoComponent } from './components/ruteo/ruteo.component';
+import { RuteoComponent } from './components/ruteo/ruteo.component';
 import { ReactiveFormsModule} from '@angular/forms';
+import { ModalnovedadComponent } from './components/popup/modalnovedad/modalnovedad.component';
+import { ModalordenpickingComponent } from './components/popup/modalordenpicking/modalordenpicking.component';
 
 @NgModule({
   declarations: [
@@ -23,11 +25,15 @@ import { ReactiveFormsModule} from '@angular/forms';
     PickingComponent,
     NavbarComponent,
     PreruteoComponent,
-    RuteoComponent,
-    ModalruteoComponent
+    RuteoComponent, 
+    ModalnovedadComponent,
+    ModalordenpickingComponent,
+    ModalnovedadComponent
+   
   ],
   entryComponents: [
-    ModalruteoComponent
+    ModalordenpickingComponent,
+    ModalnovedadComponent 
   ],
   imports: [
     BrowserModule,

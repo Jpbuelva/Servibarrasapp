@@ -1,9 +1,9 @@
 <div class="row">
 
   <div class="col-3">
-  <button class="btn btn-primary" (click)="prerutear()" href="#pills-profile">pre-ruteo</button>
+  <button [disabled]=" cargando || selection.selected.length === 0 ? 'disabled': null" class="btn btn-primary" (click)="prerutear()"  href="#pills-profile">pre-ruteo</button>
 </div>
-  <div class="col-6 text-center siz" >
+  <div class="col-6 tcenter siz" >
 PRE-RUTEAR
 </div>
   <div class="col-3 text-right">
@@ -14,7 +14,7 @@ PRE-RUTEAR
   </div>
   <br>
  
-  <div class="col-12 text-center animated fadeIn"  *ngIf="cargando" > 
+  <div class="col-12 tcenter animated fadeIn"  *ngIf="cargando" > 
    <i class="fas fa-spinner fa-3x fa-spin"></i> 
  
 </div>
@@ -25,7 +25,7 @@ PRE-RUTEAR
     <mat-form-field> 
         <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
     </mat-form-field>
-    <select class="combo" [(ngModel)]="opcionSeleccionado" (change)="capturar()">            
+    <select class="combo" [(ngModel)]="opcionSeleccionado" >            
             <option value="1">Consolidado</option>
             <option value="2">No consolidado</option>           
         </select>

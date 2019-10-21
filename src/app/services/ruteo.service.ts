@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -27,7 +28,7 @@ export class RuteoService {
         return this.http.get(`http://52.224.236.78/tecnocedi/api/getpedidospreruteo/${id}`);
       }
 
-      getGrupos(): Observable<any> {
+      getGrupos(): Observable<any>{
           return this.http.get(`http://52.224.236.78/tecnocedi/api/getgrupos`);
       }
 }

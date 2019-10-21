@@ -1,0 +1,21 @@
+<h1 mat-dialog-title>Novedad </h1>
+<div mat-dialog-content>
+  <ng-container >
+    <th mat-header-cell *matHeaderCellDef  style="padding: 0px 20px;" >orden </th>        
+   
+          <mat-form-field style="width: 100%;">
+              <mat-select placeholder="Seleccione Novedad"  [(ngModel)]="data.novedadId">
+                <mat-option   *ngFor="let novedad of data.dataNovedad;" [value]="novedad.novedadId" required>
+                  {{novedad.novedadDescripcion }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>                
+   
+  </ng-container>
+</div>
+<div mat-dialog-actions>   
+    <button *ngFor="let novedadAccion of data.dataNovedadAccion;" mat-button
+    [mat-dialog-close]="data"   [value]="novedadAccion.novedadAccionId" 
+    (click)="data.novedadAccionId = novedadAccion.novedadAccionId" [disabled]="!data.novedadId">
+    {{novedadAccion.novedadAccionNombre.substring(0 ,novedadAccion.novedadAccionNombre.indexOf(" "))}}</button>            
+</div>

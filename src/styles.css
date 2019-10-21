@@ -1,8 +1,6 @@
 @import '@angular/material/prebuilt-themes/deeppurple-amber.css';
 
-body{
-    padding-bottom: 50px;
-  }
+
  
  
  .main-container{
@@ -69,5 +67,6 @@ body{
         font-size: 36px !important;
    }}
 
-
-   
+   .tcenter {
+    text-align: center !important;
+  }

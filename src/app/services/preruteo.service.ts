@@ -37,4 +37,8 @@ headers: HttpHeaders = new HttpHeaders({
       getpedidodetalle(id: string): Observable<any> {
         return this.http.get(`${this.url}/getpedidodetalle/${id}`);
       }
+
+      getpedidosPreruteo(id: number): Observable<any> {
+        return this.http.get(`${this.url}/getpedidospreruteo/${id}`);
+      }
   }

@@ -14,4 +14,10 @@ export class UbicacionesService {
   getArticulos(): Observable<any> {
     return this.http.get('http://52.224.236.78/tecnocedi/api/getubicaciones');
     }
+
+
+
+    getBahia(id: number): Observable<any> {
+      return this.http.get(`http://52.224.236.78/tecnocedi/api/getubicacionesbytipoubicacionid/${id}`);
+    }
 }
